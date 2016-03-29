@@ -38,15 +38,19 @@ git commit
 -------------------------
 ##思考1
 克隆时所有分支均被克隆，但只有 HEAD 指向的分支被检出。
+##判断
   正确，克隆时是克隆所以远程仓库中的内容。根据官方文档`Clones a repository into a newly created directory, creates remote-tracking branches for each branch in the cloned repository (visible using git branch -r), and creates and checks out an initial branch that is forked from the cloned repository’s currently active branch.`这句话中第一句就可以得知克隆时克隆所以仓库中的内容
 ##思考2
-  克隆出的工作区中执行 git log、git status、git checkout、git commit 等操作 不会去访问远程版本库。
+克隆出的工作区中执行 git log、git status、git checkout、git commit 等操作 不会去访问远程版本库。
+##判断
   正确，在实验中我们不难发现，在我们提交作业时，`git add`和`git commit`操作执行后并没有直接的得到实验结果，而是提示我们有文件进行了更改，
   之后执行`git push`操作后得出结果，可以得知此时远程版本库被更改。
 ##思考3
-  克隆时只有远程版本库 HEAD 指向的分支被克隆。
+克隆时只有远程版本库 HEAD 指向的分支被克隆。
+##判断
   错误，正确的应该是所有分支被克隆，但只有HEAD分支被检出。理由在第一题中有所叙述。
 ##思考4
-  克隆后工作区的默认分支处于 master 分支。
+克隆后工作区的默认分支处于 master 分支。
+##判断
   正确。在我们进行试验时，工作区默认确实在master分支中，同时官方文档中也给出了类似的描述` creates and checks out an initial branch that is forked from the cloned repository’s currently active branch.`这句话中的`initial branch`默认应该为master分支
 
